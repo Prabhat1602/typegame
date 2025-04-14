@@ -55,11 +55,11 @@ function updateVehicle(wpm) {
   let src = "assets/bicycle.png";
   if (wpm >= 300) src = "assets/rocket.png";
   else if (wpm >= 250) src = "assets/rocket.png";
-  else if (wpm >= 180) src = "assets/jet.png";
-  else if (wpm >= 130) src = "assets/plane.png";
+  else if (wpm >= 180) src = "assets/jet.jpg";
+  else if (wpm >= 130) src = "assets/plane.jpg";
   else if (wpm >= 90) src = "assets/train.png";
   else if (wpm >= 60) src = "assets/car.png";
-  else if (wpm >= 30) src = "assets/motorbike.png";
+  else if (wpm >= 30) src = "assets/motorbike.jpg";
   else src = "assets/bicycle.png";
 
   vehicleEl.src = src;
