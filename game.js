@@ -56,22 +56,25 @@ function updateStats() {
 
 // Vehicle evolution
 function updateVehicle(wpm) {
-  let src = "assets/bicycle.png";
-  if (wpm >= 300) src = "assets/rocket.png";
-  else if (wpm >= 250) src = "assets/rocket.png";
-  else if (wpm >= 180) src = "assets/jet.jpg";
-  else if (wpm >= 130) src = "assets/plane.jpg";
-  else if (wpm >= 90) src = "assets/train.png";
-  else if (wpm >= 60) src = "assets/car.png";
-  else if (wpm >= 30) src = "assets/motorbike.jpg";
-  else src = "assets/bicycle.png";
+  let newStage = "bicycle";
+  if (wpm >= 300) newStage = "rocket";
+  else if (wpm >= 180) newStage = "jet";
+  else if (wpm >= 130) newStage = "plane";
+  else if (wpm >= 90) newStage = "train";
+  else if (wpm >= 60) newStage = "car";
+  else if (wpm >= 30) newStage = "motorbike";
 
-  vehicleEl.src = src;
+  if (newStage !== lastStage) {
+    vehicleEl.src = `assets/${newStage}.png`;
+    upgradeSound.play();
+    lastStage = newStage;
+  }
+
   vehicleEl.classList.remove("speed-up");
-void vehicleEl.offsetWidth; // force reflow
-vehicleEl.classList.add("speed-up");
-
+  void vehicleEl.offsetWidth;
+  vehicleEl.classList.add("speed-up");
 }
+
 
 // Input Listener
 inputEl.addEventListener("input", () => {
