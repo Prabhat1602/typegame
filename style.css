@@ -53,3 +53,71 @@ body {
   margin-top: 10px;
   font-size: 18px;
 }
+/* Landing Page Styles */
+.landing-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+  animation: gradientShift 10s infinite;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.game-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: popIn 1s ease-out;
+}
+
+#playerName {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+#highScoreText {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+#startBtn {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background: #fff;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#startBtn:hover {
+  transform: scale(1.05);
+}
+
+/* Hide Game UI until started */
+.hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
