@@ -31,9 +31,11 @@ var quotes = [
   "To be or not to be that is the question"
 ];
 
+// Now declare the sound elements outside of the array
 var upgradeSound = document.getElementById("upgrade-sound");
 var completeSound = document.getElementById("complete-sound");
 var lastStage = "";
+
 
 var startTime, interval;
 var currentQuote = "";
