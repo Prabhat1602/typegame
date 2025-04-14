@@ -2,11 +2,13 @@
 // or in a standalone JS file
 
 // Landing Page Logic
-const landing = document.getElementById("landing");
-const gameContainer = document.getElementById("gameContainer");
-const playerNameInput = document.getElementById("playerName");
-const highScoreText = document.getElementById("highScoreText");
-const startBtn = document.getElementById("startBtn");
+// Use 'var' if browser does not support ES6
+var landing = document.getElementById("landing");
+var gameContainer = document.getElementById("gameContainer");
+var playerNameInput = document.getElementById("playerName");
+var highScoreText = document.getElementById("highScoreText");
+var startBtn = document.getElementById("startBtn");
+
 
 // Load high score from localStorage
 let highScore = localStorage.getItem("highScore") || 0;
