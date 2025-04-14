@@ -1,34 +1,30 @@
-// Make sure the entire script is wrapped in a <script> tag, if in HTML
-// or in a standalone JS file
-
-// Landing Page Logic
-// Use 'var' if browser does not support ES6
+// Get HTML elements
 var landing = document.getElementById("landing");
 var gameContainer = document.getElementById("gameContainer");
 var playerNameInput = document.getElementById("playerName");
 var highScoreText = document.getElementById("highScoreText");
 var startBtn = document.getElementById("startBtn");
 
-
 // Load high score from localStorage
-let highScore = localStorage.getItem("highScore") || 0;
+var highScore = localStorage.getItem("highScore") || 0;
 highScoreText.textContent = `High Score: ${highScore}`;
 
-// Start button handler
-startBtn.addEventListener("click", () => {
-  const name = playerNameInput.value.trim();
+// Start button click handler
+startBtn.addEventListener("click", function () {
+  var name = playerNameInput.value.trim();
   if (name === "") {
     alert("Please enter your name to play.");
     return;
   }
 
-  // Hide landing screen and show the game screen
+  // Hide the landing page and show the game container
   landing.classList.add("hidden");
   gameContainer.classList.remove("hidden");
 
-  // Set the player name (you can use it in the game)
+  // Optional: Log player name
   console.log("Player name:", name);
 });
+
 
 
 const quotes = [
