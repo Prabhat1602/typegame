@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typerace Evolution</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="vehicle-area">
+      <img id="vehicle" src="assets/bicycle.png" alt="Vehicle">
+    </div>
+    <div class="typing-area">
+      <p id="quote">Loading...</p>
+      <input type="text" id="typing-input" placeholder="Start typing..." autofocus />
+      <div class="stats">
+        <span id="wpm">WPM: 0</span>
+        <span id="accuracy">Accuracy: 100%</span>
+      </div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
