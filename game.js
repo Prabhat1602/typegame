@@ -4,6 +4,10 @@ const quotes = [
   "Code is like humor when you have to explain it it's bad",
   "Stay hungry stay foolish",
   "To be or not to be that is the question"
+  const upgradeSound = document.getElementById("upgrade-sound");
+const completeSound = document.getElementById("complete-sound");
+let lastStage = "";
+
 ];
 
 let startTime, interval;
