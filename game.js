@@ -19,6 +19,9 @@ const quoteEl = document.getElementById("quote");
 const inputEl = document.getElementById("typing-input");
 const wpmEl = document.getElementById("wpm");
 const accuracyEl = document.getElementById("accuracy");
+let score = 0;
+const scoreEl = document.getElementById("score");
+
 const vehicleEl = document.getElementById("vehicle");
 
 // Load new quote
@@ -80,6 +83,10 @@ function updateVehicle(wpm) {
 inputEl.addEventListener("input", () => {
   updateStats();
   if (inputEl.value === currentQuote) {
+      completeSound.play();
+  score += 10;
+  scoreEl.textContent = `Score: ${score}`;
+
     clearInterval(interval);
     setTimeout(() => {
       loadQuote();
