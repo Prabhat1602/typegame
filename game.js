@@ -63,6 +63,10 @@ function updateVehicle(wpm) {
   else src = "assets/bicycle.png";
 
   vehicleEl.src = src;
+  vehicleEl.classList.remove("speed-up");
+void vehicleEl.offsetWidth; // force reflow
+vehicleEl.classList.add("speed-up");
+
 }
 
 // Input Listener
