@@ -7,7 +7,7 @@ var startBtn = document.getElementById("startBtn");
 
 // Load high score from localStorage
 var highScore = localStorage.getItem("highScore") || 0;
-highScoreText.textContent = `High Score: ${highScore}`;
+highScoreText.textContent = "High Score: " + highScore;
 
 // Start button click handler
 startBtn.addEventListener("click", function () {
@@ -17,41 +17,36 @@ startBtn.addEventListener("click", function () {
     return;
   }
 
-  // Hide the landing page and show the game container
   landing.classList.add("hidden");
   gameContainer.classList.remove("hidden");
-
-  // Optional: Log player name
   console.log("Player name:", name);
 });
 
-
-
-const quotes = [
+// --- Game Logic ---
+var quotes = [
   "The quick brown fox jumps over the lazy dog",
   "Typing speed improves with practice",
   "Code is like humor when you have to explain it it's bad",
   "Stay hungry stay foolish",
   "To be or not to be that is the question"
-  const upgradeSound = document.getElementById("upgrade-sound");
-const completeSound = document.getElementById("complete-sound");
-let lastStage = "";
-
 ];
 
-let startTime, interval;
-let currentQuote = "";
-let typedChars = 0;
-let errors = 0;
+var upgradeSound = document.getElementById("upgrade-sound");
+var completeSound = document.getElementById("complete-sound");
+var lastStage = "";
 
-const quoteEl = document.getElementById("quote");
-const inputEl = document.getElementById("typing-input");
-const wpmEl = document.getElementById("wpm");
-const accuracyEl = document.getElementById("accuracy");
-let score = 0;
-const scoreEl = document.getElementById("score");
+var startTime, interval;
+var currentQuote = "";
+var typedChars = 0;
+var errors = 0;
 
-const vehicleEl = document.getElementById("vehicle");
+var quoteEl = document.getElementById("quote");
+var inputEl = document.getElementById("typing-input");
+var wpmEl = document.getElementById("wpm");
+var accuracyEl = document.getElementById("accuracy");
+var score = 0;
+var scoreEl = document.getElementById("score");
+var vehicleEl = document.getElementById("vehicle");
 
 // Load new quote
 function loadQuote() {
@@ -64,31 +59,31 @@ function loadQuote() {
 }
 
 function updateStats() {
-  const now = new Date();
-  const elapsed = (now - startTime) / 1000 / 60; // in minutes
-  const wordsTyped = inputEl.value.trim().split(" ").length;
-  const wpm = Math.round(wordsTyped / elapsed);
+  var now = new Date();
+  var elapsed = (now - startTime) / 1000 / 60; // in minutes
+  var wordsTyped = inputEl.value.trim().split(" ").length;
+  var wpm = Math.round(wordsTyped / elapsed);
 
-  let correctChars = 0;
-  const input = inputEl.value;
-  for (let i = 0; i < input.length; i++) {
+  var correctChars = 0;
+  var input = inputEl.value;
+  for (var i = 0; i < input.length; i++) {
     if (input[i] === currentQuote[i]) correctChars++;
     else errors++;
   }
 
-  const accuracy = input.length === 0
+  var accuracy = input.length === 0
     ? 100
     : Math.round((correctChars / input.length) * 100);
 
-  wpmEl.textContent = `WPM: ${wpm}`;
-  accuracyEl.textContent = `Accuracy: ${accuracy}%`;
+  wpmEl.textContent = "WPM: " + wpm;
+  accuracyEl.textContent = "Accuracy: " + accuracy + "%";
 
   updateVehicle(wpm);
 }
 
 // Vehicle evolution
 function updateVehicle(wpm) {
-  let newStage = "bicycle";
+  var newStage = "bicycle";
   if (wpm >= 300) newStage = "rocket";
   else if (wpm >= 180) newStage = "jet";
   else if (wpm >= 130) newStage = "plane";
@@ -97,7 +92,7 @@ function updateVehicle(wpm) {
   else if (wpm >= 30) newStage = "motorbike";
 
   if (newStage !== lastStage) {
-    vehicleEl.src = `assets/${newStage}.png`;
+    vehicleEl.src = "assets/" + newStage + ".png";
     upgradeSound.play();
     lastStage = newStage;
   }
@@ -107,23 +102,23 @@ function updateVehicle(wpm) {
   vehicleEl.classList.add("speed-up");
 }
 
-
-// Input Listener
-inputEl.addEventListener("input", () => {
+// Typing input listener
+inputEl.addEventListener("input", function () {
   updateStats();
   if (inputEl.value === currentQuote) {
-      completeSound.play();
-  score += 10;
-  scoreEl.textContent = `Score: ${score}`;
+    completeSound.play();
+    score += 10;
+    scoreEl.textContent = "Score: " + score;
 
     clearInterval(interval);
-    setTimeout(() => {
+    setTimeout(function () {
       loadQuote();
     }, 1000);
   }
 });
 
-// Start game on load
-window.onload = () => {
+// Start game on page load
+window.onload = function () {
   loadQuote();
 };
+
