@@ -17,6 +17,8 @@
 
   <!-- Game Container -->
   <div id="gameContainer" class="hidden">
+    <input id="typing-input" placeholder="Start typing here..." autocomplete="off">
+
     <div class="vehicle-area">
       <img id="vehicle" src="assets/bicycle.png" alt="Vehicle" onerror="this.src='assets/bicycle.png';">
     </div>
@@ -35,7 +37,8 @@
   <audio id="complete-sound" src="assets/complete.mp3" preload="auto"></audio>
 
 <!-- Place this just before the closing </body> tag -->
-<script src="game.js"></script>
+<script src="game.js" defer></script>
+
 </body>
 
 </body>
