@@ -7,24 +7,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="game-container">
+  <!-- Landing Page -->
+  <div id="landing" class="landing-screen">
+    <h1 class="game-title">🚀 Typerace Evolution</h1>
+    <input type="text" id="playerName" placeholder="Enter your name" />
+    <p id="highScoreText">High Score: 0</p>
+    <button id="startBtn">Enter to Play</button>
+  </div>
+
+  <!-- Game Container -->
+  <div id="gameContainer" class="hidden">
     <div class="vehicle-area">
       <img id="vehicle" src="assets/bicycle.png" alt="Vehicle" onerror="this.src='assets/bicycle.png';">
     </div>
-    <div class="typing-area">
-      <p id="quote">Loading...</p>
-      <input type="text" id="typing-input" placeholder="Start typing..." autofocus />
-      <div class="stats">
-        <span id="score">Score: 0</span>
 
-        <span id="wpm">WPM: 0</span>
-        <span id="accuracy">Accuracy: 100%</span>
-      </div>
+    <div class="stats">
+      <span id="wpm">WPM: 0</span>
+      <span id="accuracy">Accuracy: 100%</span>
+      <span id="score">Score: 0</span>
     </div>
-  </div>
-  <script src="game.js"></script>
-  <audio id="upgrade-sound" src="assets/upgrade.mp3" preload="auto"></audio>
-<audio id="complete-sound" src="assets/complete.mp3" preload="auto"></audio>
 
+    <div id="quote"></div>
+    <input type="text" id="input" placeholder="Start typing..." />
+  </div>
+
+  <audio id="upgrade-sound" src="assets/upgrade.mp3" preload="auto"></audio>
+  <audio id="complete-sound" src="assets/complete.mp3" preload="auto"></audio>
+
+  <script src="game.js" defer></script>
 </body>
+
 </html>
