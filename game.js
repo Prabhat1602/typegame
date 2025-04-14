@@ -1,3 +1,6 @@
+// Make sure the entire script is wrapped in a <script> tag, if in HTML
+// or in a standalone JS file
+
 // Landing Page Logic
 const landing = document.getElementById("landing");
 const gameContainer = document.getElementById("gameContainer");
@@ -16,9 +19,15 @@ startBtn.addEventListener("click", () => {
     alert("Please enter your name to play.");
     return;
   }
+
+  // Hide landing screen and show the game screen
   landing.classList.add("hidden");
   gameContainer.classList.remove("hidden");
+
+  // Set the player name (you can use it in the game)
+  console.log("Player name:", name);
 });
+
 
 const quotes = [
   "The quick brown fox jumps over the lazy dog",
