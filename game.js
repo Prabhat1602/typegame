@@ -1,3 +1,25 @@
+// Landing Page Logic
+const landing = document.getElementById("landing");
+const gameContainer = document.getElementById("gameContainer");
+const playerNameInput = document.getElementById("playerName");
+const highScoreText = document.getElementById("highScoreText");
+const startBtn = document.getElementById("startBtn");
+
+// Load high score from localStorage
+let highScore = localStorage.getItem("highScore") || 0;
+highScoreText.textContent = `High Score: ${highScore}`;
+
+// Start button handler
+startBtn.addEventListener("click", () => {
+  const name = playerNameInput.value.trim();
+  if (name === "") {
+    alert("Please enter your name to play.");
+    return;
+  }
+  landing.classList.add("hidden");
+  gameContainer.classList.remove("hidden");
+});
+
 const quotes = [
   "The quick brown fox jumps over the lazy dog",
   "Typing speed improves with practice",
