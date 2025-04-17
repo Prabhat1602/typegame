@@ -4,6 +4,11 @@ var gameContainer = document.getElementById("gameContainer");
 var playerNameInput = document.getElementById("playerName");
 var highScoreText = document.getElementById("highScoreText");
 var startBtn = document.getElementById("startBtn");
+const signupBtn = document.getElementById("signupBtn");
+
+signupBtn.addEventListener("click", () => {
+  alert("Redirecting to Sign Up Page... (coming soon)");
+});
 
 // Load high score from localStorage
 var highScore = localStorage.getItem("highScore") || 0;
