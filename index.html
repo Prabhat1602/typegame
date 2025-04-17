@@ -7,8 +7,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Landing Page -->
- <div id="landing" class="landing-screen" style="background-image: url('assets/homepage-bg.png'); background-size: cover; background-position: center;">
+ 
+ <!-- Landing Page -->
+<div id="landing" class="landing-screen">
+  <div class="logo-container">
+    <img src="assets/homepage-bg.png" alt="Logo" class="animated-logo">
+    <h1 class="game-title animated-title">🚀 TypeRush Evolution</h1>
+  </div>
+  <input type="text" id="playerName" placeholder="Enter your name" />
+  <p id="highScoreText">High Score: 0</p>
+  <div class="button-group">
+    <button id="startBtn">Enter to Play</button>
+    <button id="signupBtn">Sign Up</button>
+  </div>
+</div>
+
 
     <h1 class="game-title">🚀 Typerace Evolution</h1>
     <input type="text" id="playerName" placeholder="Enter your name" />
